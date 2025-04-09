@@ -1,11 +1,16 @@
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/covers/cover-5.jpg" class="d-block w-100" alt="Muñeca con reloj">
-    </div>
-    <div class="carousel-item">
-      <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/covers/cover-23.jpg" class="d-block w-100" alt="Par de zapatos">
-    </div>
+    @for (cover of covers; track cover.id) {
+      @if ($first) {
+        <div class="carousel-item active">
+          <img [src]="cover.image" class="d-block w-100" [alt]="cover.alt">
+        </div>
+      } @else {
+        <div class="carousel-item">
+          <img [src]="cover.image" class="d-block w-100" [alt]="cover.alt">
+        </div>
+      }
+    }
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -19,60 +24,30 @@
 
 <div>
   <div class="row">
-    <div class="col-sm mb-3 mb-sm-0">
-      <div class="card">
-        <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-22.jpg" class="card-img-top" alt="Summer hats">
-        <div class="card-body">
-          <p class="card-text">Summer hats</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card">
-        <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-23.jpg" class="card-img-top" alt="Men hats">
-        <div class="card-body">
-          <p class="card-text">Men hats</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card">
+    @for (product of products; track product.id) {
+      <div class="col-sm">
         <div class="card">
-          <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-24.jpg" class="card-img-top" alt="Floral dresses">
+          <img [src]="product.image" class="card-img-top" [alt]="product.alt">
           <div class="card-body">
-            <p class="card-text">Floral dresses</p>
+            <p class="card-text">{{ product.alt }}</p>
           </div>
         </div>
-    </div>
+      </div>
+    }
   </div>
 </div>
 
 <div>
   <div class="row">
-    <div class="col-sm mb-3 mb-sm-0">
-      <div class="card">
-        <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-22.jpg" class="card-img-top" alt="Summer hats">
-        <div class="card-body">
-          <p class="card-text">Summer hats</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card">
-        <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-23.jpg" class="card-img-top" alt="Men hats">
-        <div class="card-body">
-          <p class="card-text">Men hats</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card">
+    @for (product of products; track product.id) {
+      <div class="col-sm">
         <div class="card">
-          <img src="https://yevgenysim-turkey.github.io/shopper/assets/img/products/product-24.jpg" class="card-img-top" alt="Floral dresses">
+          <img [src]="product.image" class="card-img-top" [alt]="product.alt">
           <div class="card-body">
-            <p class="card-text">Floral dresses</p>
+            <p class="card-text">{{ product.alt }}</p>
           </div>
         </div>
-    </div>
+      </div>
+    }
   </div>
 </div>
