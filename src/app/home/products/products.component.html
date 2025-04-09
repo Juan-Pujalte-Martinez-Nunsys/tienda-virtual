@@ -1,0 +1,14 @@
+<div>
+    <div class="row">
+      @for (product of products; track product.id) {
+        <div class="col-sm">
+          <div class="card">
+            <img [src]="product.image" class="card-img-top" [alt]="product.alt">
+            <div class="card-body">
+              <p class="card-text">{{ product.alt }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
