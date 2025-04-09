@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Img } from '../img.model';
-import { HttpClient } from '@angular/common/http';
+import { ImgService } from '../img.service';
 
 @Component({
   selector: 'app-carousel',
@@ -10,21 +9,16 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
-export class CarouselComponent {
-  covers?: Img[];
+export class CarouselComponent implements OnInit {
+  coversImages?: Img[];
 
   constructor(
-    private http: HttpClient
-  ) {
-    this.getCovers().subscribe(
-      (data) => {
-        this.covers = data;
-        console.log(this.covers)
-      }
-    );
-  }
+    private imgService: ImgService
+  ) {}
 
-  public getCovers(): Observable<Img[]> {
-    return this.http.get<Img[]>("http://localhost:4100/covers");
+  ngOnInit(): void {
+    this.imgService.getCoversImages().subscribe(
+      coversImages => this.coversImages = coversImages
+    );
   }
 }

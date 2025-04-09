@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Img } from '../img.model';
-import { HttpClient } from '@angular/common/http';
+import { ImgService } from '../img.service';
 
 @Component({
   selector: 'app-categories',
@@ -10,22 +9,16 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
 })
-export class CategoriesComponent {
-  categories?: Img[];
+export class CategoriesComponent implements OnInit {
+  categoriesImages?: Img[];
 
   constructor(
-    private http: HttpClient
-  ) {
-    
-    this.getCategories().subscribe(
-      (data) => {
-        this.categories = data;
-        console.log(this.categories)
-      }
-    );
-  }
+    private imgService: ImgService
+  ) {}
 
-  public getCategories(): Observable<Img[]> {
-    return this.http.get<Img[]>("http://localhost:4100/categories")
+  ngOnInit(): void {
+    this.imgService.getCategoriesImages().subscribe(
+      categoriesImages => this.categoriesImages = categoriesImages
+    );
   }
 }

@@ -1,13 +1,13 @@
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
-      @for (cover of covers; track cover.id) {
+      @for (coverImage of coversImages; track coverImage.id) {
         @if ($first) {
           <div class="carousel-item active">
-            <img [src]="cover.image" class="d-block w-100" [alt]="cover.alt">
+            <img [src]="coverImage.image" class="d-block w-100" [alt]="coverImage.alt">
           </div>
         } @else {
           <div class="carousel-item">
-            <img [src]="cover.image" class="d-block w-100" [alt]="cover.alt">
+            <img [src]="coverImage.image" class="d-block w-100" [alt]="coverImage.alt">
           </div>
         }
       }

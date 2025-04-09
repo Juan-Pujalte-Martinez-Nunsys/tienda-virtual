@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Img } from '../img.model';
-import { HttpClient } from '@angular/common/http';
+import { ImgService } from '../img.service';
 
 @Component({
   selector: 'app-products',
@@ -10,22 +9,16 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
-export class ProductsComponent {
-  products?: Img[];
+export class ProductsComponent implements OnInit {
+  productsImages?: Img[];
 
   constructor(
-    private http: HttpClient
-  ) {
-    
-    this.getProducts().subscribe(
-      (data) => {
-        this.products = data;
-        console.log(this.products)
-      }
-    );
-  }
+    private imgService: ImgService
+  ) {}
 
-  public getProducts(): Observable<Img[]> {
-    return this.http.get<Img[]>("http://localhost:4100/products")
+  ngOnInit(): void {
+    this.imgService.getProductsImages().subscribe(
+      productsImages => this.productsImages = productsImages
+    );
   }
 }
