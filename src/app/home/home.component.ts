@@ -1,14 +1,12 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Img } from './img.model';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from "./categories/categories.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselComponent, ProductsComponent],
+  imports: [CarouselComponent, ProductsComponent, CategoriesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

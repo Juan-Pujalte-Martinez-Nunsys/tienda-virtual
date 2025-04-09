@@ -1,0 +1,14 @@
+<div>
+    <div class="row">
+      @for (category of categories; track category.id) {
+        <div class="col-sm">
+          <div class="card">
+            <img [src]="category.image" class="card-img-top" [alt]="category.alt">
+            <div class="card-body">
+              <p class="card-text">{{ category.alt }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
