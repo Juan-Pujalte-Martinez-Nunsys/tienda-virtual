@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.imgService.get().subscribe(
+    this.imgService.getAll().subscribe(
       productsImages => this.productsImages = productsImages
     );
   }

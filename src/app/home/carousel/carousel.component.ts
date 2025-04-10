@@ -17,7 +17,7 @@ export class CarouselComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.imgService.get().subscribe(
+    this.imgService.getAll().subscribe(
       coversImages => this.coversImages = coversImages
     );
   }

@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.imgService.get().subscribe(
+    this.imgService.getAll().subscribe(
       categoriesImages => this.categoriesImages = categoriesImages
     );
   }
