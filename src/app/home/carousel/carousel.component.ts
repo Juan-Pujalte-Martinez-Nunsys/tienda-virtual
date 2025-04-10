@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../img.model';
-import { ImgService } from '../img.service';
+import { Img } from '../../api/img.model';
+import { CoversService } from '../../api/covers.service';
 
 @Component({
   selector: 'app-carousel',
@@ -13,11 +13,11 @@ export class CarouselComponent implements OnInit {
   coversImages?: Img[];
 
   constructor(
-    private imgService: ImgService
+    private imgService: CoversService
   ) {}
 
   ngOnInit(): void {
-    this.imgService.getCoversImages().subscribe(
+    this.imgService.get().subscribe(
       coversImages => this.coversImages = coversImages
     );
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../img.model';
-import { ImgService } from '../img.service';
+import { Img } from '../../api/img.model';
+import { CategoriesService } from '../../api/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -13,11 +13,11 @@ export class CategoriesComponent implements OnInit {
   categoriesImages?: Img[];
 
   constructor(
-    private imgService: ImgService
+    private imgService: CategoriesService
   ) {}
 
   ngOnInit(): void {
-    this.imgService.getCategoriesImages().subscribe(
+    this.imgService.get().subscribe(
       categoriesImages => this.categoriesImages = categoriesImages
     );
   }
