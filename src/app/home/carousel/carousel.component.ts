@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../../api/img.model';
-import { CoversService } from '../../api/covers.service';
+import { Img } from '../../models/img.model';
+import { CoversService } from '../../apis/covers.service';
 
 @Component({
   selector: 'app-carousel',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../../api/img.model';
-import { CategoriesService } from '../../api/categories.service';
+import { Img } from '../../models/img.model';
+import { CategoriesService } from '../../apis/categories.service';
 
 @Component({
   selector: 'app-categories',

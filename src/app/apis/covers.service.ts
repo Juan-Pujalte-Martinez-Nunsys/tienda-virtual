@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Img } from './img.model';
+import { Img } from '../models/img.model';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './apiService';
 
