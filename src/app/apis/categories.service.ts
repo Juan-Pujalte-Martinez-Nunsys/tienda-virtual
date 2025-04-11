@@ -12,6 +12,6 @@ export class CategoriesService extends ApiService<Img> {
     http: HttpClient,
     categoryAdapter: CategoryAdapter
   ) {
-    super(http, categoryAdapter, "categories")
+    super(http, categoryAdapter, "img/categories")
   }
 }

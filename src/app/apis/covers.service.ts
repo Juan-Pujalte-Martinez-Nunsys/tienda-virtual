@@ -12,6 +12,6 @@ export class CoversService extends ApiService<Img> {
     http: HttpClient,
     coverAdapter: CoverAdapter
   ) {
-    super(http, coverAdapter, "covers")
+    super(http, coverAdapter, "img/covers")
   }
 }

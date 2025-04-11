@@ -12,6 +12,6 @@ export class ProductsService extends ApiService<Img> {
     http: HttpClient,
     productAdapter: ProductAdapter
   ) {
-    super(http, productAdapter, "products")
+    super(http, productAdapter, "img/products")
   }
 }
