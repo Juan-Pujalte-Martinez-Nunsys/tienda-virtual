@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../../models/img.model';
 import { CategoriesService } from '../../apis/categories.service';
 import { RouterLink } from '@angular/router';
+import { Category } from '../../models/category.model';
 
 @Component({
   selector: 'app-categories',
@@ -11,15 +11,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './categories.component.scss'
 })
 export class CategoriesComponent implements OnInit {
-  categoriesImages?: Img[];
+  categories?: Category[];
 
   constructor(
-    private imgService: CategoriesService
+    private categoriesService: CategoriesService
   ) {}
 
   ngOnInit(): void {
-    this.imgService.getAll().subscribe(
-      categoriesImages => this.categoriesImages = categoriesImages
+    this.categoriesService.getAll().subscribe(
+      categories => this.categories = categories
     );
   }
 }

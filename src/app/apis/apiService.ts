@@ -13,7 +13,7 @@ export class ApiService<T> {
 
   public getAll(): Observable<T[]> {
     return this.http.get(this.server + this.endpoint).pipe(
-      map((raws: any) => raws.map(this.adapter.adapt))
+      map((raws: any) => raws.map((raw: any) => this.adapter.adapt(raw)))
     );
   }
 }

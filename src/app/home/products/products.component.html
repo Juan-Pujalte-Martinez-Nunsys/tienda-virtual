@@ -1,11 +1,11 @@
 <div>
     <div class="row">
-      @for (productImage of productsImages; track productImage.id) {
+      @for (product of products; track product.id) {
         <div class="col-sm">
           <div class="card">
-            <img [src]="productImage.data" class="card-img-top" [alt]="productImage.alt">
+            <img [src]="product.image.data" class="card-img-top" [alt]="product.image.alt">
             <div class="card-body">
-              <p class="card-text">{{ productImage.alt }}</p>
+              <p class="card-text">{{ product.image.alt }}</p>
             </div>
           </div>
         </div>

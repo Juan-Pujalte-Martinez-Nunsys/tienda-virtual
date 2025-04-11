@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Img } from '../../models/img.model';
 import { ProductsService } from '../../apis/products.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -10,15 +10,15 @@ import { ProductsService } from '../../apis/products.service';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent implements OnInit {
-  productsImages?: Img[];
+  products?: Product[];
 
   constructor(
-    private imgService: ProductsService
+    private productsService: ProductsService
   ) {}
 
   ngOnInit(): void {
-    this.imgService.getAll().subscribe(
-      productsImages => this.productsImages = productsImages
+    this.productsService.getAll().subscribe(
+      products => this.products = products
     );
   }
 }

@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Img } from '../models/img.model';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './apiService';
 import { CoverAdapter } from '../adapters/cover.adapter';
+import { Cover } from '../models/cover.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CoversService extends ApiService<Img> {
+export class CoversService extends ApiService<Cover> {
   constructor(
     http: HttpClient,
     coverAdapter: CoverAdapter
   ) {
-    super(http, coverAdapter, "img/covers")
+    super(http, coverAdapter, "covers")
   }
 }

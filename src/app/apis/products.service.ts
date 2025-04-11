@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './apiService';
-import { Img } from '../models/img.model';
 import { HttpClient } from '@angular/common/http';
 import { ProductAdapter } from '../adapters/product.adapter';
+import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService extends ApiService<Img> {
+export class ProductsService extends ApiService<Product> {
   constructor(
     http: HttpClient,
     productAdapter: ProductAdapter
   ) {
-    super(http, productAdapter, "img/products")
+    super(http, productAdapter, "products")
   }
 }

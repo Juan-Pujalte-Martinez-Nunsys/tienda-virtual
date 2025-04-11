@@ -1,11 +1,11 @@
 <div>
     <div class="row">
-      @for (categoryImage of categoriesImages; track categoryImage.id) {
+      @for (category of categories; track category.id) {
         <div class="col-sm">
-          <div class="card" [routerLink]="['categories', categoryImage.id]">
-            <img [src]="categoryImage.data" class="card-img-top" [alt]="categoryImage.alt">
+          <div class="card" [routerLink]="['categories', category.id]">
+            <img [src]="category.image.data" class="card-img-top" [alt]="category.image.alt">
             <div class="card-body">
-              <p class="card-text">{{ categoryImage.alt }}</p>
+              <p class="card-text">{{ category.image.alt }}</p>
             </div>
           </div>
         </div>

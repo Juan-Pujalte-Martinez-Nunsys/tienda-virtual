@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Adapter } from './adapter';
-import { Img } from '../models/img.model';
+import { Category } from '../models/category.model';
+import { ImageAdapter } from './image.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryAdapter implements Adapter<Img> {
+export class CategoryAdapter implements Adapter<Category> {
 
-  constructor() { }
+  constructor(
+    private imageAdapter: ImageAdapter
+  ) { }
 
-  adapt(data: any): Img {
-    return new Img(data.id, data.alt, data.data)
+  adapt(item: any): Category {
+    return new Category(
+      item.id,
+      this.imageAdapter.adapt(item.image)
+    );
   }
 }
