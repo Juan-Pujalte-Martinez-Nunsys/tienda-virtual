@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Img } from '../../models/img.model';
 import { CategoriesService } from '../../apis/categories.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
 })

@@ -2,7 +2,7 @@
     <div class="row">
       @for (categoryImage of categoriesImages; track categoryImage.id) {
         <div class="col-sm">
-          <div class="card">
+          <div class="card" routerLink="categories">
             <img [src]="categoryImage.data" class="card-img-top" [alt]="categoryImage.alt">
             <div class="card-body">
               <p class="card-text">{{ categoryImage.alt }}</p>
