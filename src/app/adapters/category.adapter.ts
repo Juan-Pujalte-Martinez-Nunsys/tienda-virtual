@@ -10,6 +10,6 @@ export class CategoryAdapter implements Adapter<Img> {
   constructor() { }
 
   adapt(data: any): Img {
-    return new Img(data.id, data.alt, data.data)
+    return new Img(data.alt, data.data)
   }
 }
