@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-      @for (productImage of productsImages; track productImage.data) {
+      @for (productImage of productsImages; track productImage.id) {
         <div class="col-sm">
           <div class="card">
             <img [src]="productImage.data" class="card-img-top" [alt]="productImage.alt">
