@@ -3,7 +3,7 @@ import { map, Observable } from 'rxjs';
 import { Adapter } from '../adapters/adapter';
 
 export class ApiService<T> {
-  private server = "http://localhost:4100/";
+  private server = "http://localhost:4100/api/";
 
   constructor(
     private http: HttpClient,

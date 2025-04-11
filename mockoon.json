@@ -2,7 +2,7 @@
   "uuid": "78d14d9b-bfa2-4659-91bb-167d6190dea7",
   "lastMigration": 33,
   "name": "Mockoon",
-  "endpointPrefix": "",
+  "endpointPrefix": "api",
   "latency": 0,
   "port": 4100,
   "hostname": "",
