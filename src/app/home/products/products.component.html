@@ -3,7 +3,7 @@
       @for (productImage of productsImages; track productImage.id) {
         <div class="col-sm">
           <div class="card">
-            <img [src]="productImage.image" class="card-img-top" [alt]="productImage.alt">
+            <img [src]="productImage.data" class="card-img-top" [alt]="productImage.alt">
             <div class="card-body">
               <p class="card-text">{{ productImage.alt }}</p>
             </div>

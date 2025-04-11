@@ -3,7 +3,7 @@
       @for (categoryImage of categoriesImages; track categoryImage.id) {
         <div class="col-sm">
           <div class="card">
-            <img [src]="categoryImage.image" class="card-img-top" [alt]="categoryImage.alt">
+            <img [src]="categoryImage.data" class="card-img-top" [alt]="categoryImage.alt">
             <div class="card-body">
               <p class="card-text">{{ categoryImage.alt }}</p>
             </div>

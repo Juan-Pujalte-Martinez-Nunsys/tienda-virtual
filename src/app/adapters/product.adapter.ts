@@ -10,6 +10,6 @@ export class ProductAdapter implements Adapter<Img> {
   constructor() { }
 
   adapt(data: any): Img {
-    return new Img(data.id, data.alt, data.image);
+    return new Img(data.id, data.alt, data.data);
   }
 }
