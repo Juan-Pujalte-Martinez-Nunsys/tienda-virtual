@@ -17,9 +17,9 @@
             Store
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" [routerLink]="['categories', 1]">1º Categoria</a></li>
-            <li><a class="dropdown-item" [routerLink]="['categories', 2]">2º Categoria</a></li>
-            <li><a class="dropdown-item" [routerLink]="['categories', 3]">3º Categoria</a></li>
+            @for (category of categories; track category.id) {
+              <li><a class="dropdown-item" [routerLink]="['categories', category.id]">{{category.id}}º Category</a></li>
+            }
           </ul>
         </li>
         <li class="nav-item">
