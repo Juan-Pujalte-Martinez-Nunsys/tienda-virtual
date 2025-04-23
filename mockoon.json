@@ -186,21 +186,21 @@
       "id": "kqax",
       "name": "covers",
       "documentation": "",
-      "value": "[\n  {{#each (dataRaw 'img/covers')}}\n  {\n    \"id\": {{@index}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{this.data}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
+      "value": "[\n  {{#each (dataRaw 'img/covers')}}\n  {\n    \"id\": {{@index}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{{this.data}}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
     },
     {
       "uuid": "85f90e9e-c2dc-43ce-b605-1534bada15fc",
       "id": "z081",
       "name": "products",
       "documentation": "",
-      "value": "[\n  {{#each (dataRaw 'img/products')}}\n  {\n    \"id\": {{@index}},\n    \"categoryId\": {{modulo @index 6}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{this.data}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
+      "value": "[\n  {{#each (dataRaw 'img/products')}}\n  {\n    \"id\": {{@index}},\n    \"categoryId\": {{modulo @index 6}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{{this.data}}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
     },
     {
       "uuid": "63a86847-9ce6-4e8f-8b24-15d340d280b1",
       "id": "bui9",
       "name": "categories",
       "documentation": "",
-      "value": "[\n  {{#each (dataRaw 'img/categories')}}\n  {\n    \"id\": {{@index}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{this.data}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
+      "value": "[\n  {{#each (dataRaw 'img/categories')}}\n  {\n    \"id\": {{@index}},\n    \"image\": {\n      \"alt\": \"{{this.alt}}\",\n      \"data\": \"{{{this.data}}}\"\n    }\n  }{{#unless @last}},{{/unless}}\n  {{/each}}\n]"
     }
   ],
   "callbacks": []
